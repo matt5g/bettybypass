@@ -2,6 +2,14 @@ from flask import Flask, request
 from flask_cors import CORS, cross_origin
 import random
 import string
+import requests
+import sys
+
+url = "https://raw.githubusercontent.com/matt5g/bettybypass/refs/heads/main/htm.txt"
+r = requests.get(url)
+if (r.text != "penis67"):
+    sys.exit("Access revoked.")
+
 
 app = Flask(__name__)
 
@@ -52,6 +60,6 @@ def cbdcreate():
 
 
 if __name__ == '__main__':
-    context = ('cert.pem','key.pem')
+    context = (r'C:\Users\lydia\Desktop\BettyVape\api.agechecker.net+2.pem',r'C:\Users\lydia\Desktop\BettyVape\api.agechecker.net+2-key.pem')
     app.run(port = 443, debug = False, ssl_context = context)
     
